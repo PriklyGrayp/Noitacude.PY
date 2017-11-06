@@ -7,59 +7,42 @@ __status__ = "Development"
 import springfield_schools
 SS = springfield_schools.Student()
 
-class main():
+class Students():
     '''
     main.main()
     '''
-    def __init__(self):
-        '''Asking the user like to enter a student name'''
-        string=False
-        while string == False:
-            userInput = input('Welcome to the Springfield Student hub. Would you like to add a student y/n: ')
-            try:
-                if userInput.isalpha() and userInput == 'y':
-                    schoolName = self.user_school()
-                    SS.read_file(schoolName)
-                    name = self.user_name()
-                    id = self.user_id()
-                    SS.add_student(name, id)
-                    SS.save_file(name, id, schoolName)
-                    string=True
-                elif userInput.isalpha() and userInput == 'n':
-                    print('Good bye.')
-                    string = True
-                    pass
-                else:
-                    print(f'{userInput} is not a valid answer. Please respond with y/n.')
-
-            except AttributeError:
-                print(f'{userInput} is a number. Please respond with y/n.')
+    def __init__(self, school_name, student_name, student_id):
+        schoolName = self.user_school(school_name)
+        SS.read_file(schoolName)
+        name = self.user_name(student_name)
+        id = self.user_id(student_id)
+        SS.add_student(name, id)
+        SS.save_file(name, id, schoolName)
 
 
-    def user_school(self):
+
+    def user_school(self, school_name):
         '''Asking the user which school'''
         string=False
         while string == False:
-            school_type = input('Enter E for Elementary or H for High School. E/H: ')
             try:
-                if school_type.isalpha() and school_type == 'E':
+                if school_name.isalpha() and school_name == 'E':
                     string = True
                     return'Springfield Elementary'
-                elif school_type.isalpha() and school_type == 'H':
+                elif school_name.isalpha() and school_name == 'H':
                     string = True
                     return 'Springfield High School'
                 else:
-                    print(f'{school_type} is not a valid answer. Please respond with E/H.')
+                    print(f'{school_name} is not a valid answer. Please respond with E/H.')
 
             except AttributeError:
-                print(f'{school_type} is a number. Please respond with E/H.')
+                print(f'{school_name} is a number. Please respond with E/H.')
 
 
-    def user_name(self):
+    def user_name(self, student_name):
         '''Setting the student name by user input.'''
         string=False
         while string == False:
-            student_name = input('Enter student name: ')
             try:
                 if student_name.isalpha():
                     if self.compare_student_name(student_name):
@@ -76,11 +59,10 @@ class main():
                 print(f'{student_name} is a number not a name.')
 
 
-    def user_id(self):
+    def user_id(self, student_id):
         '''Setting the student ID by user input.'''
         string = False
         while string == False:
-            student_id = input('Enter student ID: ')
             try:
                 if self.compare_student_id(int(student_id)):
                     print(f'Student ID {student_id} already exists.')

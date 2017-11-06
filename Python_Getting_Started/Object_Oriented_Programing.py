@@ -5,8 +5,8 @@ __email__ = "priklygrayp@gmail.com"
 __status__ = "Development"
 
 '''Classes'''
-students = []
 
+students = []
 
 class Student: # Parent Class
 
