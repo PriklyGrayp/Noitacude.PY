@@ -68,5 +68,25 @@ for b in enumerate(a):
 a = 'show how to index'
 
 a[1:-2]
-# 'how how to ind'
 
+
+'''Set'''
+p = set()
+p.(5, 8, 9)
+
+blue_eyes ={'Olivia', 'Harry', 'Lily', 'Jack', 'Amelia'}
+blond_hair = {'Harry', 'Jack', 'Amelia', 'Mia', 'Joshua'}
+smell_hcn = {'Harry', 'Amelia'}
+taste_ptc = {'Harry', 'Lily', 'Amelia', 'Lola'}
+o_blood = {'Mia', 'Joshua', 'Lily', 'Olivia'}
+b_blood = {'Amelia', 'Jack'}
+a_blood = {'Harry'}
+ab_blood = {'Joshua', 'Lola'}
+
+blue_eyes.union(blond_hair)
+blue_eyes.intersection(blond_hair)
+blue_eyes.difference(blond_hair)
+blue_eyes.symmetric_difference(blond_hair)
+smell_hcn.issubset(blond_hair)
+smell_ptc.issuperset(smell_hcn)
+a_blood.isdisjoint(o_blood)
