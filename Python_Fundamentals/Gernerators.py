@@ -37,4 +37,8 @@ G = gen246()
 print(next(G))
 print(next(G))
 print(next(G))
-print(next(G))
+# print(next(G))
+
+million_squares = sum(x*x for x in range(1, 1000001))
+million_squares # Single use
+print(million_squares)
