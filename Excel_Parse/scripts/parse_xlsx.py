@@ -62,8 +62,8 @@ def apply_filters(out_sheet, out_filters):
 out_start_row = 1
 out_filters = False
 mirror_table = {1:"A", 2:"B", 3:"C", 4:"D", 5:"E", 6:"F"}  # Input : Output
-out_file = "C:/Users/mvaar/Desktop/Output.xlsx"
-in_files = ["C:/Users/mvaar/Desktop/InputA.xlsx", "C:/Users/mvaar/Desktop/InputB.xlsx"]
+out_file = "C:/Users/mvaar/Documents/GitHub/Noitacude.PY/Excel_Parse/test/Output.xlsx"
+in_files = ["C:/Users/mvaar/Documents/GitHub/Noitacude.PY/Excel_Parse/test/InputA.xlsx", "C:/Users/mvaar/Documents/GitHub/Noitacude.PY/Excel_Parse/test/InputA.xlsx"]
 
 
 for in_file in in_files:
